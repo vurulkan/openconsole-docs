@@ -72,3 +72,5 @@ See [API and agents](/api/api-keys).
 - **Deployment**: single-container Docker image; Kubernetes manifests in `deploy/`.
 
 Kubernetes OpenConsole is designed as an internal visibility and operations platform and is **not** a Kubernetes security boundary.
+
+See [the missing page](/installation/does-not-exist).
