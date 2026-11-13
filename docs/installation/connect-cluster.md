@@ -81,13 +81,14 @@ Delete the rules for permissions you will never grant (from a copy of the file).
 
 ## 2. Read the token and CA
 
-Run this against the cluster you are adding:
+Run this against the cluster you are adding (`CTX` is its kubectl context):
 
 ```bash
+CTX=<cluster>
 NS=kubernetes-openconsole
-TOKEN=$(kubectl -n $NS get secret openconsole-reader-token -o jsonpath='{.data.token}' | base64 -d)
-CA=$(kubectl -n $NS get secret openconsole-reader-token -o jsonpath='{.data.ca\.crt}')   # already base64, use as is
-SERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+TOKEN=$(kubectl --context $CTX -n $NS get secret openconsole-reader-token -o jsonpath='{.data.token}' | base64 -d)
+CA=$(kubectl --context $CTX -n $NS get secret openconsole-reader-token -o jsonpath='{.data.ca\.crt}')   # already base64, use as is
+SERVER=$(kubectl config view --context $CTX --minify -o jsonpath='{.clusters[0].cluster.server}')
 echo "$SERVER"; echo "$TOKEN"; echo "$CA"
 ```
 
@@ -103,7 +104,8 @@ OpenConsole runs in, use `https://kubernetes.default.svc` instead.
 | Field | Value |
 |---|---|
 | Name | anything, e.g. `prod-west`; it appears in the cluster switcher and in every audit event |
-| Method | `ServiceAccount Token` |
+| Description | optional |
+| Method | `ServiceAccount Token` (the form opens on Kubeconfig) |
 | API Server | `$SERVER`, or `https://kubernetes.default.svc` for the cluster OpenConsole runs in |
 | Token | `$TOKEN` |
 | CA Cert (base64) | `$CA`. Leave it empty only if the API server's certificate is signed by a public CA |
@@ -150,18 +152,27 @@ The token of `openconsole-reader-token` never expires. To replace it, delete the
 Secret, and apply the file again:
 
 ```bash
+CTX=<cluster>
 NS=kubernetes-openconsole
-kubectl -n $NS delete serviceaccount openconsole-reader          # its token Secret goes with it
-kubectl -n $NS wait --for=delete secret/openconsole-reader-token --timeout=60s
-kubectl apply -f https://raw.githubusercontent.com/vurulkan/kubernetes-openconsole/v2.22.0/deploy/rbac.yaml
+kubectl --context $CTX -n $NS delete serviceaccount openconsole-reader          # its token Secret goes with it
+kubectl --context $CTX -n $NS wait --for=delete secret/openconsole-reader-token --timeout=60s
+kubectl --context $CTX apply -f \
+  https://raw.githubusercontent.com/vurulkan/kubernetes-openconsole/v2.22.0/deploy/rbac.yaml
 ```
 
 Deleting and re-creating only the Secret gives you **the same token again**: Kubernetes derives a ServiceAccount
 token from the ServiceAccount and the Secret's name, so the "new" token is identical and the old one keeps working.
-A new ServiceAccount gets a new identity, and the old token is refused at once.
+A new ServiceAccount gets a new identity, and the old token is refused at once. (The comment in `rbac.yaml` 2.22.0
+still describes the Secret-only way; it is wrong.)
 
-Then read the new token (step 2), open the cluster in **Admin → Clusters**, tick **Replace credentials** and paste
-it (or upload the new kubeconfig). Until you do, OpenConsole can't reach that cluster.
+Then read the new token and CA (step 2), click **Edit** on the cluster in **Admin → Clusters**, tick **Replace
+credentials** and paste the new token **and the CA again**: with *Replace credentials* both fields start empty, and
+a save without the CA fails (`x509: certificate signed by unknown authority`). For a kubeconfig cluster, upload the
+new file.
+
+Until you do, every cluster entry that uses the old token (token and kubeconfig alike) has lost access. The lists may
+still show what OpenConsole had cached, and the Clusters page shows no error; the pod log has
+`Failed to watch … Unauthorized` lines.
 
 For a token that expires on its own instead:
 `kubectl -n kubernetes-openconsole create token openconsole-reader --duration=8760h`. Replace it in the UI before

@@ -47,6 +47,7 @@ patches:
                     value: UTC
 ```
 
+- The `?ref=` resource is fetched with `git`, so the machine running `kubectl` needs `git` and access to GitHub.
 - **Pin the release** in both places (`ref=v2.22.0` and `newTag`). Without the `images:` override the manifest runs
   `:latest`, and a pod restart could then upgrade you without notice.
 - **`Recreate`** is important. With the default rolling update the new pod starts while the old one still holds

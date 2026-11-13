@@ -49,6 +49,7 @@ it) and an SPDX **SBOM** (every package in the image). Check them with the [GitH
 gh attestation verify oci://ghcr.io/vurulkan/kubernetes-openconsole:2.22.0 \
   --repo vurulkan/kubernetes-openconsole \
   --signer-workflow vurulkan/kubernetes-openconsole/.github/workflows/ci.yml
+echo $?   # in a script nothing may be printed; 0 = verified
 
 # Download the SBOM (SPDX 2.3 JSON)
 gh attestation verify oci://ghcr.io/vurulkan/kubernetes-openconsole:2.22.0 \
