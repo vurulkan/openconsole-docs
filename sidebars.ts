@@ -4,20 +4,28 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   docs: [
     'intro',
+    'features',
     {
       type: 'category',
       label: 'Getting started',
       collapsed: false,
-      items: ['getting-started/quick-start', 'getting-started/first-login'],
+      items: [
+        'getting-started/quick-start',
+        'getting-started/try-on-k3d',
+        'getting-started/first-login',
+      ],
     },
     {
       type: 'category',
       label: 'Installation',
+      collapsed: false,
       items: [
         'installation/kubernetes',
-        'installation/images',
+        'installation/verify-image',
         'installation/connect-cluster',
         'installation/upgrading',
+        'installation/backup-restore',
+        'installation/uninstall',
         'installation/build-from-source',
       ],
     },
