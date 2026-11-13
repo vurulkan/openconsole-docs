@@ -57,3 +57,36 @@
     animation: none !important;
   }
 }
+
+/* Links in running text are underlined, not told apart by color alone (WCAG 1.4.1). */
+.markdown a:not(.hash-link) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Prism comment colors of the github / dracula themes are below 4.5:1. */
+.token.comment,
+.token.prolog {
+  color: #57606a !important;
+}
+[data-theme='dark'] .token.comment,
+[data-theme='dark'] .token.prolog {
+  color: #a3acc8 !important;
+}
+/* github theme tokens below 4.5:1 on the light code background */
+[data-theme='light'] .token.variable,
+[data-theme='light'] .token.parameter { color: #0e7490 !important; }
+[data-theme='light'] .token.string { color: #be185d !important; }
+[data-theme='light'] .token.function { color: #b91c1c !important; }
+[data-theme='light'] .token.number,
+[data-theme='light'] .token.boolean,
+[data-theme='light'] .token.property,
+[data-theme='light'] .token.constant,
+[data-theme='light'] .token.symbol { color: #0e7490 !important; }
+[data-theme='light'] .token.atrule,
+[data-theme='light'] .token.key,
+[data-theme='light'] .token.attr-name,
+[data-theme='light'] .token.selector { color: #0369a1 !important; }
+[data-theme='light'] .token.operator,
+[data-theme='light'] .token.entity,
+[data-theme='light'] .token.url { color: #6d28d9 !important; }

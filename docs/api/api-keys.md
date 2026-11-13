@@ -48,7 +48,7 @@ curl -H "Authorization: Bearer $OPENCONSOLE_API_KEY" -H "Content-Type: applicati
 # → {"stdout":"NAME=…","stderr":"","exitCode":0,"truncated":false,"durationMs":184}
 ```
 
-| | Logs `GET …/pods/{name}/logs` | Command `POST …/pods/{name}/exec` |
+| Endpoint | Logs `GET …/pods/{name}/logs` | Command `POST …/pods/{name}/exec` |
 |---|---|---|
 | Input | `container`, `tailLines` (default 500, at most 10 000), `sinceSeconds`, `previous`, `timestamps` | `command` (argv array, **not** run in a shell: `["sh","-c","…"]` for pipes), `container`, `timeoutSeconds` (1–120, default 30); no stdin |
 | Output | `text/plain`, at most 5 MiB (cut at a line end, header `X-OpenConsole-Truncated: true`) | `stdout`, `stderr` (1 MiB each; the rest is dropped and `truncated` is true, the command still runs to its end), `exitCode`, `durationMs`. A non-zero exit code is a 200. Past the timeout: what was printed so far, `exitCode: -1`, `truncated: true`; Kubernetes doesn't stop the process, it may run on in the container. Output is text (non-UTF-8 bytes become `�`; use `base64` for binary) |

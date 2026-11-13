@@ -29,7 +29,7 @@ LDAP works alongside local accounts. By default users must exist in OpenConsole 
 
 **4. Sign-in**: users type their directory username and password on the normal login form. OpenConsole finds their DN with the user filter and binds as them. A wildcard filter (`%s*`) is safe here: at login, OpenConsole additionally requires an exact match on the username attribute, so `jo` can never resolve to `john`. Turning **Enabled** off stops all LDAP sign-ins immediately.
 
-### Accounts on first sign-in
+## Accounts on first sign-in
 
 Off by default. In **Admin → LDAP**, tick **Create an account on a user's first sign-in**, optionally pick **groups for new accounts**, and save. From then on:
 
