@@ -31,6 +31,12 @@ jobs:
       - run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # docs/reference/*.md and openapi/openapi.yaml must be the code repo's at
+      # the ref in reference.json, and the endpoint reference must have one page
+      # per operation.
+      - run: npm run reference:check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Preview (download, then npx serve build)
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4

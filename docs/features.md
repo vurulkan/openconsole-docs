@@ -47,7 +47,7 @@ Every read and write is an audit event with its own fields: `action` (`deploymen
 - **OpenAPI 3.1** at `/api/openapi.json` (no sign-in) and an in-app **Documentation** tab: quick start, a text to hand your agent, every endpoint with its permission and a `curl` example, greyed out where your keys can't reach it.
 - **No WebSocket needed** — a pod's log as text (`GET …/pods/{name}/logs`) and one command with its output and exit code (`POST …/pods/{name}/exec`; the audit log keeps the program name, never the command line).
 
-See [API and agents](/api/api-keys).
+See [API and agents](/api/overview).
 
 ## UX
 - **Light / Dark / System theme** (persisted; respects OS).

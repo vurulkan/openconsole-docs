@@ -1,4 +1,6 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+// Generated from openapi/openapi.yaml by `npm run api-docs` (not committed).
+import endpoints from './docs/api/endpoints/sidebar';
 
 // The information architecture of M17: M18–M22 fill these sections.
 const sidebars: SidebarsConfig = {
@@ -68,7 +70,23 @@ const sidebars: SidebarsConfig = {
         'administration/customization-and-flags',
       ],
     },
-    {type: 'category', label: 'API & agents', items: ['api/api-keys']},
+    {
+      type: 'category',
+      label: 'API & agents',
+      items: [
+        'api/overview',
+        'api/quick-start',
+        'api/agent-recipes',
+        'api/limits',
+        {
+          type: 'category',
+          label: 'Endpoint reference',
+          link: {type: 'doc', id: 'api/endpoints/openconsole-api'},
+          // The first item is the API overview page, used as the category link.
+          items: (endpoints as Extract<SidebarsConfig[string], unknown[]>).slice(1),
+        },
+      ],
+    },
     {
       type: 'category',
       label: 'Operations',
@@ -86,7 +104,10 @@ const sidebars: SidebarsConfig = {
       items: [
         'reference/environment-variables',
         'reference/permissions',
+        'reference/kubernetes-permissions',
         'reference/audit-events',
+        'reference/metrics',
+        'reference/keyboard-shortcuts',
       ],
     },
     'release-notes',

@@ -125,3 +125,56 @@
   background-color: #1b2336 !important;
   color: #f8fafc !important;
 }
+
+/* Endpoint reference (docusaurus-theme-openapi-docs): text contrast of at
+   least 4.5:1 in both themes (Lighthouse accessibility). `html` raises the
+   specificity above the theme's own rules, which load later. */
+html .openapi-schema__required {
+  color: #c41d23;
+}
+html[data-theme='dark'] .openapi-schema__required {
+  color: #ff8a8f;
+}
+html .openapi-tabs__response-code-item.success.active {
+  background-color: #007a00;
+}
+html .openapi-tabs__response-code-item.danger.active {
+  background-color: #c41d23;
+}
+html .openapi-tabs__response-code-item.warning.active {
+  background-color: #8a5a00;
+}
+html .openapi-tabs__response-code-item.info.active {
+  background-color: #0b6bcb;
+}
+html .openapi-tabs__response-code-item:not(.active) {
+  opacity: 1;
+}
+html[data-theme='light'] .openapi-tabs__response-code-item:not(.active) {
+  color: #525c69;
+}
+html .openapi__method-endpoint .badge--primary {
+  background-color: #4338ca;
+  border-color: #4338ca;
+}
+html .openapi__method-endpoint .badge--success {
+  background-color: #007a00;
+  border-color: #007a00;
+}
+html .openapi__method-endpoint .badge--danger {
+  background-color: #c41d23;
+  border-color: #c41d23;
+}
+html .openapi__method-endpoint .badge--warning {
+  background-color: #8a5a00;
+  border-color: #8a5a00;
+}
+html .openapi__method-endpoint .badge--info {
+  background-color: #0b6bcb;
+  border-color: #0b6bcb;
+}
+/* The auth box only repeats "bearer key" and its h4 broke the heading order;
+   the request panel still shows the Bearer Token field. */
+html .openapi-security__details {
+  display: none;
+}
