@@ -1,0 +1,56 @@
+---
+title: "Audit log"
+description: "Find who did what: filters, the fields of an event, CSV, and matching an event to the request log."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Audit log
+
+**You want to:** answer "who restarted this, when, and was anyone refused?".
+
+Every action and every read is one event: who, from where, what, on which cluster, namespace and object, and the
+outcome. Events are in **Admin → Audit Logs** for `LOG_RETENTION_DAYS` (30 days by default; successful reads made with
+API keys for `API_KEY_READ_RETENTION_DAYS`, 7) and on stdout as one JSON line each, for your log platform
+([Logging and Elastic](/operations/logging)).
+
+<Screenshot id="admin-audit" alt="Admin → Audit Logs filtered to deployment.*: bob's scale and restart events, and alice's refused deployment.restart opened to show reason forbidden, source IP, account source, request ID and user agent" />
+
+## Filters
+
+- **User**, **Action** and **Namespace** suggest the values that occur as you type; typed text matches anywhere.
+  Picking an action matches it exactly; a family such as `pod.*` or `deployment.*` takes all of its actions.
+- **Outcome** (`success`, `denied`, `failed`, `rate_limited`, `locked`), **Verb** (`list`, `restart`, `exec`, …),
+  **Resource type**, **Cluster**, **Source** (web or API key, and the key's name), and a date range.
+- *Everything refused*: Outcome = `denied`. *Every secret value read*: Action = `secret.reveal`.
+
+## Reading an event
+
+| Field | Example | Meaning |
+|---|---|---|
+| action | `deployment.restart` | `<resource type>.<verb>` |
+| outcome, reason | `denied`, `forbidden` | what happened, and why it was refused or failed (`forbidden`, `feature_disabled`, `admin_only`, `k8s_forbidden`, `not_found`, `conflict`, `api_access_policy`, …) |
+| user, account source | `alice`, `local` | who, and where the account signs in |
+| cluster, namespace, resource | `prod-eu`, `shop`, `deployment storefront` | the target; the cluster is the one the action **ran on** |
+| details | `replicas_from: 3`, `replicas_to: 2` | typed facts of the action; never a secret value or a YAML body |
+| source IP, user agent, request ID | `10.0.0.5`, `curl/8.7.1`, `oFvL68…` | from where |
+| API key | `claude-code` | set when the action was taken with an API key |
+
+**Details** on a row shows them. Every field and every detail key: [Audit events](/reference/audit-events).
+
+What is not audited: lists the UI reloads on its own (the Dashboard's 10-second refresh); calls that read no cluster
+resource (`/api/auth/me`, `/api/features`, …). The request log on stdout still has every request.
+
+## From an event to the request log
+
+Every HTTP response carries an `X-Request-Id` header. The same ID is the event's *request ID* and appears on the
+`http.request` line in OpenConsole's stdout (and `trace_id` too when tracing is on). Search your log platform for it
+to see the HTTP status, duration and the other lines of the same request.
+
+## CSV
+
+**Export CSV** exports what the filters show, one column per field (details as JSON, plus `api_key_name`). Each
+export is audited too. For access reviews, add the CSV of Users and Groups ([Users and groups](/administration/users#access-reviews)).
+
+The audit log is admin-only; see [Recipes → Auditors](/administration/recipes#auditors-read-only-no-secrets-audit-from-outside)
+for giving it to non-admins.

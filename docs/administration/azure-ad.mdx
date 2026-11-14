@@ -1,0 +1,53 @@
+---
+title: "Azure AD (Entra ID)"
+description: "Single-tenant Microsoft sign-in: app registration, settings, pre-created accounts and how accounts are matched."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Azure AD (Entra ID)
+
+**You want to:** let people sign in with their Microsoft work account.
+
+## 1. Register the app
+
+Azure portal → **Microsoft Entra ID → App registrations → New registration**:
+
+- **Supported account types**: accounts in this organizational directory only (single tenant).
+- **Redirect URI**, platform *Web*: `https://<your OpenConsole host>/api/auth/azure/callback`.
+- **Certificates & secrets → New client secret**; copy its value.
+- No API permissions are needed; OpenConsole asks only for `openid profile email`.
+
+Note the **Directory (tenant) ID** and **Application (client) ID** on the app's overview page.
+
+## 2. Configure OpenConsole
+
+**Admin → Azure AD** (example values):
+
+<Screenshot id="admin-azure" alt="Admin → Azure AD: tenant ID, client ID, redirect URL https://openconsole.example.com/api/auth/azure/callback, client secret, Save and Test Connection" />
+
+**Enabled**, **Tenant ID**, **Client ID**, **Client secret** (stored encrypted; tick **Update Client Secret** to
+change it), **Redirect URL** (exactly the URI registered above). Save, then **Test Connection**. The sign-in page now
+shows **Sign in with Microsoft**.
+
+For US Government or China clouds set `AZURE_AD_AUTHORITY` ([Environment variables](/reference/environment-variables)).
+
+## 3. Give people access
+
+Either let them sign in once (the account is created with source *Azure AD*, in no group) and then add them to groups,
+or, better, **pre-create** them: Admin → Users → New user → **Azure AD user**, their UPN or e-mail
+(`jane@example.com`) and their groups. Their first Microsoft sign-in uses that account and they see their namespaces
+at once.
+
+## How the account is found
+
+1. By the token's `preferred_username`, usually the UPN.
+2. Otherwise, a **pre-created Azure AD account nobody has signed in to yet** whose name matches `preferred_username`
+   in another letter case, or the token's `email` or `upn` (a pre-created `jane.doe@corp.com` is found when the UPN
+   is `jdoe@corp.onmicrosoft.com`).
+
+Local, LDAP and already used accounts are never taken over this way; the `user.login` event notes when an account was
+claimed (`linked_by`, `signed_in_as`). Azure AD accounts never accept a password.
+
+Signing out of OpenConsole doesn't sign the person out of Microsoft. To stop someone, disable their OpenConsole account
+or block them in Entra ID.

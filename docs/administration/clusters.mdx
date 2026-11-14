@@ -1,0 +1,51 @@
+---
+title: "Clusters"
+description: "Add, edit and remove cluster connections, the default cluster, each user's own cluster, and Prometheus per cluster."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Clusters
+
+**You want to:** connect a cluster, choose where people start, or replace a token.
+
+**Admin → Clusters** lists the connections and has the form to add one.
+
+<Screenshot id="admin-clusters" alt="Admin → Clusters: prod-eu (Default) and staging with Set / Unset default, Edit, Prometheus and Delete, and the Add Cluster form (name, description, method, kubeconfig file)" />
+
+## Add a cluster
+
+Name (it appears in the switcher and in every audit event), an optional description, and the credentials:
+**ServiceAccount Token** (API server + token + CA) or **Kubeconfig** (the form opens on Kubeconfig). **Save Cluster**
+checks the connection with a real namespace list and only then stores it, encrypted. How to create the ServiceAccount
+and read its token: [Connect a cluster](/installation/connect-cluster).
+
+The same cluster can be added twice under two names with two different identities, e.g. a read-only one for most
+people. Permissions are per cluster entry.
+
+## The default cluster and each user's cluster
+
+- **Set as default** marks the cluster everyone starts on until they pick another.
+- Each user picks **their own** cluster in the header (or with `c`); the choice is stored per user. The switcher
+  lists only the clusters their permissions cover; admins see all.
+- If a user's cluster is deleted, or they lose every permission on it, they are moved to the default.
+- Every audit event records the cluster the action ran on.
+
+## Edit, replace credentials, delete
+
+- **Edit**: name and description; tick **Replace credentials** to paste a new token **and the CA** (both fields start
+  empty) or upload a new kubeconfig. Needed after a [token rotation](/installation/connect-cluster#rotate-the-token).
+- **Delete** removes the connection. Users who had it selected move to the default cluster.
+
+## Prometheus
+
+**Prometheus** on a cluster sets where longer usage history comes from (up to 7 days instead of 24 hours in memory),
+either through the Kubernetes API server or a direct URL; **Test connection** says which step fails.
+See [Prometheus](/administration/prometheus).
+
+## What OpenConsole needs from each cluster
+
+OpenConsole connects to every cluster at start-up and keeps it in an in-memory cache (informers), so lists don't poll
+the API server. The ClusterRole of the connection decides what works: the table in
+[Connect a cluster](/installation/connect-cluster#what-each-clusterrole-rule-is-for) lists each rule, what it
+enables and what disappears without it. `GET /metrics` reports `openconsole_cluster_connected{cluster}` per cluster.

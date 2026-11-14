@@ -1,0 +1,85 @@
+---
+title: "LDAP / Active Directory"
+description: "Connect a directory, import users into groups or create accounts on first sign-in, limit who may sign in, common errors."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# LDAP / Active Directory
+
+**You want to:** let people sign in with their directory account.
+
+LDAP works next to local accounts. By default a person must have an OpenConsole account before they can sign in, so you
+**import** them; or you let OpenConsole **create the account on their first sign-in**.
+
+## 1. Configure
+
+**Admin → LDAP** (the values below are examples):
+
+<Screenshot id="admin-ldap" alt="Admin → LDAP: host dc01.example.corp, port 389, bind DN, user base DN, user filter (sAMAccountName=%s), username attribute, the first-sign-in option, Save and Test connection, and the import search below" />
+
+| Field | Meaning |
+|---|---|
+| Enabled | turns LDAP sign-in on or off at once |
+| Host + Port, or URL | `dc01.example.corp` and `389`, or `ldaps://dc01.example.corp:636` |
+| Use SSL (ldaps) | TLS from the start (port 636) |
+| StartTLS | upgrade a plain connection on 389 to TLS (see the note below) |
+| Skip TLS certificate verification | testing only |
+| Timeout | seconds per LDAP operation (default 10) |
+| Bind DN / Bind password | the service account that searches the directory, e.g. `CN=svc-openconsole,OU=ServiceAccounts,DC=example,DC=corp`. The password is stored encrypted; tick **Update Bind Password** only when you change it |
+| User base DN (single) | where people are searched, e.g. `OU=Users,DC=example,DC=corp`. For people in several OUs, use their common parent (in 2.22.0 the *User base DNs (comma separated)* field splits a DN at its own commas, so it can't hold a full DN) |
+| User filter | `%s` is what the person typed. Active Directory `(sAMAccountName=%s)`, OpenLDAP `(uid=%s)` |
+| Username attribute | the attribute that becomes the OpenConsole username: `sAMAccountName` or `uid` |
+
+**Save LDAP settings**, then **Test connection**: it binds with the service account and searches each base DN.
+
+:::warning[TLS in 2.22.0]
+**StartTLS only connects with *Skip TLS certificate verification* ticked** in 2.22.0: the server certificate can't be
+checked (filed as a bug). For an encrypted **and** verified connection use **Use SSL (ldaps)** on port 636; the
+certificate must then be trusted by a public CA, since there is no field for your own CA yet.
+:::
+
+## 2. Import people (or create them on first sign-in)
+
+**Import**: Admin → Users → New user → **Import from LDAP…** (or below the settings on Admin → LDAP). Type part of a
+name and search: the user filter runs with `%s` replaced by what you typed, up to 100 results per base DN. For prefix
+search use `(sAMAccountName=%s*)` as the filter. Pick the people and the **groups** they join, and import. Existing
+accounts are listed apart and skipped. Each import is audited (`admin.import`).
+
+**On first sign-in** (off by default): tick *Create an account on a user's first sign-in*, pick the **groups for new
+accounts**, save. Then:
+
+- anyone the user filter finds who signs in with a valid directory password gets an account at once, in those groups;
+- new accounts are never admins (`user.create` with `auto_provisioned: true`);
+- to lock someone out, **disable** the account: a deleted one is simply created again at their next sign-in.
+
+## 3. Limit who may sign in
+
+Put the condition in the **user filter**. Only members of one directory group:
+
+```text
+(&(sAMAccountName=%s)(memberOf=CN=OpenConsole Users,OU=Groups,DC=example,DC=corp))
+```
+
+Directory groups are not mapped to OpenConsole groups; membership in OpenConsole groups is set at import, by the
+first-sign-in groups, or by an admin.
+
+## Signing in
+
+People type their directory username and password in the normal form. OpenConsole finds their DN with the user filter
+and binds as them, so the directory checks the password every time; a disabled or expired directory account can't
+sign in. A wildcard filter is safe: at sign-in OpenConsole also requires an **exact match** on the username attribute,
+so `jo` never signs in as `john`. Turning **Enabled** off stops every LDAP sign-in at once.
+
+## When it doesn't work
+
+| Symptom | Usually |
+|---|---|
+| Test: connection refused / timeout | host or port wrong, or a firewall between the OpenConsole pod and the directory |
+| Test: `x509: certificate signed by unknown authority` | ldaps with a certificate from your own CA; see the TLS note above |
+| Test: StartTLS fails without *Skip verification* | the 2.22.0 limitation above |
+| Test: `Invalid Credentials (49)` | bind DN or bind password wrong (an AD bind DN is the full `CN=…`, or `user@domain`) |
+| Test works, a person can't sign in | the user filter doesn't find them under the base DNs, or the username attribute differs from what they type; or (without first-sign-in) they were never imported |
+| Signed in, sees nothing | they are in no OpenConsole group with a role |
+
+The failed `user.login` event in the audit log has the reason (`login_method: ldap`).
