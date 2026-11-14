@@ -107,7 +107,7 @@ Everything else is configured in the UI and stored in the database. These are re
 | Variable | Default | Meaning |
 |---|---|---|
 | `TIMEZONE` | `UTC` (the manifest sets `Europe/Istanbul`) | time zone of audit timestamps in the UI; stored times are UTC |
-| `LOG_RETENTION_DAYS` | `30` | audit events kept in the database; `0` = forever |
+| `LOG_RETENTION_DAYS` | `30` | days audit events are kept in the database (`0` or an invalid value means the default, 30) |
 | `RESTART_HISTORY_RETENTION_DAYS` | `30` | container exits kept for the restart history |
 | `API_KEY_READ_RETENTION_DAYS` | `7` | successful reads made with an API key |
 | `APP_ENV` | (the manifest sets `prod`) | environment label on every log line and trace |
