@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 Every action and every read is one event: who, from where, what, on which cluster, namespace and object, and the
 outcome. Events are in **Admin → Audit Logs** for `LOG_RETENTION_DAYS` (30 days by default; successful reads made with
 API keys for `API_KEY_READ_RETENTION_DAYS`, 7) and on stdout as one JSON line each, for your log platform
-([Logging and Elastic](/operations/logging)).
+([Elastic](/operations/elastic)).
 
 <Screenshot id="admin-audit" alt="Admin → Audit Logs filtered to deployment.*: bob's scale and restart events, and alice's refused deployment.restart opened to show reason forbidden, source IP, account source, request ID and user agent" />
 

@@ -92,10 +92,15 @@ const sidebars: SidebarsConfig = {
       label: 'Operations',
       items: [
         'operations/logging',
-        'operations/tracing',
+        'operations/elastic',
         'operations/metrics',
+        'operations/tracing',
+        'operations/health-probes',
         'operations/security',
+        'operations/hardening',
+        'operations/air-gapped',
         'operations/troubleshooting',
+        'operations/faq',
       ],
     },
     {
