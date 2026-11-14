@@ -90,3 +90,24 @@
 [data-theme='light'] .token.operator,
 [data-theme='light'] .token.entity,
 [data-theme='light'] .token.url { color: #6d28d9 !important; }
+
+/* Screenshots (src/components/Screenshot.tsx) */
+.oc-screenshot {
+  margin: 1.25rem 0 1.75rem;
+}
+.oc-screenshot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+.oc-screenshot figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* "Can't see it?" boxes at the end of user-guide pages */
+.oc-missing {
+  border-left: 4px solid var(--ifm-color-warning-dark);
+}

@@ -1,0 +1,40 @@
+---
+title: "Choosing a cluster and namespace"
+sidebar_label: "Cluster and namespace"
+description: "Pick the cluster you work on and the namespace you look at; why you only see some of them."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Choosing a cluster and namespace
+
+**You want to:** look at another cluster or another namespace.
+
+## Your cluster
+
+The cluster you work on is in the header. Click it, or press `c`:
+
+<Screenshot id="cluster-switcher" alt="The cluster switcher open in the header, listing prod-eu (default) and staging, with staging selected" />
+
+- The list has the clusters your permissions cover. The one marked **default** is where you start until you pick
+  another.
+- Picking a cluster switches **only you**. OpenConsole remembers it, on every device you sign in from.
+- In the open list, `1`–`9` pick by position, `↑` / `↓` move and `Enter` selects.
+- Every action you take is recorded with the cluster it ran on.
+
+If your cluster is removed, or you lose every permission on it, you are moved back to the default.
+
+## Your namespaces
+
+The left panel lists the namespaces of the current cluster **in which you hold at least one permission**. Others
+are not shown at all, not even their names. Type in the filter above the list (or press `n`) to narrow it down.
+OpenConsole remembers the namespace you picked.
+
+The tabs at the top of the Dashboard (Pods, Deployments, …, Secrets) also follow your permissions: you see a tab
+only if you may list that kind of object in this namespace.
+
+:::info[Can't see a cluster, namespace or tab?]
+Your permissions decide all three. Ask your admin for a role that grants `list` on what you need, naming the
+cluster and namespace, for example *"`pods:list` and `pods:logs` in `shop` on `prod-eu`"*. Changes apply on your
+next click; you don't have to sign in again.
+:::

@@ -1,0 +1,39 @@
+{
+ "time": 1794606861576,
+ "sockets": [
+  {
+   "path": "/ws/namespaces/shop/pods/catalog-575885dfd9-56vnv/logs",
+   "frames": [
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:39.616610040Z\",\"c\":\"catalog\",\"text\":\"catalog 3.4.1 starting\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:39.616826030Z\",\"c\":\"catalog\",\"text\":\"connecting to postgres:5432\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:41.619180821Z\",\"c\":\"catalog\",\"text\":\"error: dial tcp postgres:5432: connection refused\"}\n"
+    },
+    {
+     "s": "{\"t\":\"end\",\"reason\":\"container_terminated\",\"retry\":true}\n"
+    }
+   ]
+  },
+  {
+   "path": "/ws/namespaces/shop/pods/catalog-575885dfd9-56vnv/logs",
+   "frames": [
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:39.616610040Z\",\"c\":\"catalog\",\"text\":\"catalog 3.4.1 starting\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:39.616826030Z\",\"c\":\"catalog\",\"text\":\"connecting to postgres:5432\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:41.619180821Z\",\"c\":\"catalog\",\"text\":\"error: dial tcp postgres:5432: connection refused\"}\n"
+    },
+    {
+     "s": "{\"t\":\"end\",\"reason\":\"previous_complete\"}\n"
+    }
+   ]
+  }
+ ]
+}
