@@ -111,3 +111,17 @@
 .oc-missing {
   border-left: 4px solid var(--ifm-color-warning-dark);
 }
+
+/* Mermaid edge labels: readable on both themes (the default dark theme is below 4.5:1) */
+.docusaurus-mermaid-container .edgeLabel,
+.docusaurus-mermaid-container .edgeLabel p,
+.docusaurus-mermaid-container .labelBkg {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel,
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel p,
+[data-theme='dark'] .docusaurus-mermaid-container .labelBkg {
+  background-color: #1b2336 !important;
+  color: #f8fafc !important;
+}

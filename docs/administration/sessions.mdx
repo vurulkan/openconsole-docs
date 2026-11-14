@@ -1,0 +1,34 @@
+---
+title: "Sessions"
+description: "See who is signed in, sign someone out everywhere, and set how long a sign-in lasts."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Sessions
+
+## Active sessions
+
+**You want to:** see who is signed in, or end someone's sessions now.
+
+**Admin → Sessions** lists every sign-in token with the user, its status, address and browser, when it was issued and
+last used, and when it expires. *Only active sessions* hides expired and revoked ones.
+
+<Screenshot id="admin-sessions" alt="Admin → Sessions: active sessions of ayse.yilmaz, bob, alice and admin with address, browser, issued, last used and expiry, and revoke buttons" />
+
+- The **bin** on a row signs out that one session; the other button signs out **every** session of that user.
+- A user changing their password, or an admin resetting it, signs out every session of that user too.
+- Each revocation is audited (`session.revoke`, `all: true` for every session of a user).
+
+Revoking sessions doesn't stop a user's [API keys](/administration/api-access-policy); revoke those separately, or
+disable the user.
+
+## Session lifetime and API key expiry
+
+**Admin → Session**:
+
+<Screenshot id="admin-session-settings" alt="Admin → Session: session lifetime 60 minutes, and the API key expiry policy (longest lifetime, allow keys that never expire)" />
+
+- **Session lifetime**: how long a sign-in stays valid, in minutes (default 60). It applies to new sign-ins.
+- **API key expiry**: the longest lifetime a new or regenerated key may get, and whether keys without an expiry
+  are allowed ([API access policy](/administration/api-access-policy#expiry-policy)).

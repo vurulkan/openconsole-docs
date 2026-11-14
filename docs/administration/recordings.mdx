@@ -3,7 +3,13 @@ title: "Session recording"
 description: "Pod shell recording, playback, disk protection, retention."
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Session recording
+
+**You want to:** know what was done in a pod shell, or keep recordings from filling the disk.
+
+<Screenshot id="admin-recordings" alt="Admin → Recordings: the recording settings (on, retention 30 days, 10 MB per session, 2048 MB quota, 512 MB free, delete oldest) with disk usage, and the list of session recordings with filters" />
 
 Every pod shell session, and every single command run through `POST …/pods/{name}/exec`, is recorded as an [asciicast v2](https://docs.asciinema.org/manual/asciicast/v2/) file and can be replayed by admins. Recording lives entirely inside OpenConsole — no extra ClusterRole permissions.
 
@@ -16,6 +22,9 @@ Every pod shell session, and every single command run through `POST …/pods/{na
 **Privacy.** If someone prints a secret (`cat` of a mounted secret, `env`, `kubectl get secret -o yaml`), that secret is now in the recording. The shell shows a red *"This session is being recorded"* banner that says so. The banner only appears when the server confirms that the session is actually being recorded. Recordings are admin-only, and every view or download is audited. Treat the recordings volume like the audit database.
 
 **Playback (Admin → Recordings)**
+
+<Screenshot id="recording-player" alt="The recording player: alice's session in a storefront pod on staging replayed, with skip idle time, 1x / 2x / 4x speed and Download" />
+
 - Filter by user, namespace, pod, source (web / API key, key name) and date range. The table shows duration, size, *in progress* / *truncated* badges, the key name for a shell opened with an API key, and a *command* badge for a single command (`POST …/exec`).
 - ▶ opens an in-browser player: play / pause, timeline seek, 1x / 2x / 4x, and "skip idle time" (squeezes pauses longer than 2 s).
 - ⬇ downloads the `.cast` file, after a confirmation that warns the file may contain secrets and must not be shared in tickets / chat / email. It plays in the `asciinema` CLI too: `asciinema play file.cast`.
