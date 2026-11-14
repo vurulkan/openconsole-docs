@@ -36,7 +36,7 @@ const FEATURES: Feature[] = [
   {
     title: 'An API for scripts and agents',
     text: 'Scoped API keys that never exceed their owner, an OpenAPI 3.1 description, logs and one command over plain REST. Claude Code or Cursor work with the same rules as people.',
-    to: '/api/api-keys',
+    to: '/api/overview',
     icon: icon(<><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></>),
   },
 ];

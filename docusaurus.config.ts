@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
 // Where the site is served. Moving it (custom domain, another repo) changes
 // only these two lines, plus static/CNAME for a custom domain.
@@ -55,7 +56,33 @@ const config: Config = {
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap',
   ],
 
+  clientModules: ['./src/clientModules/apiListRoles.ts'],
+
+  plugins: [
+    // Endpoint reference: one page per operation of the code repo's OpenAPI
+    // description (openapi/openapi.yaml, copied by npm run reference:sync).
+    // `npm run api-docs` writes docs/api/endpoints/ before start / build; it is
+    // not committed.
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'classic',
+        config: {
+          openconsole: {
+            specPath: 'openapi/openapi.site.yaml', // from openapi.yaml by scripts/openapi-site.mjs
+            outputDir: 'docs/api/endpoints',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+            hideSendButton: true,
+            showSchemas: false,
+          } satisfies OpenApiPlugin.Options,
+        },
+      },
+    ],
+  ],
+
   themes: [
+    'docusaurus-theme-openapi-docs',
     '@docusaurus/theme-mermaid',
     [
       '@easyops-cn/docusaurus-search-local',
@@ -77,6 +104,7 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
+          docItemComponent: '@theme/ApiItem',
           editUrl: 'https://github.com/vurulkan/openconsole-docs/edit/main/',
           showLastUpdateTime: false,
         },
@@ -114,7 +142,7 @@ const config: Config = {
           items: [
             {label: 'Quick start', to: '/getting-started/quick-start'},
             {label: 'Install on Kubernetes', to: '/installation/kubernetes'},
-            {label: 'API and agents', to: '/api/api-keys'},
+            {label: 'API and agents', to: '/api/overview'},
           ],
         },
         {
@@ -136,6 +164,13 @@ const config: Config = {
     mermaid: {
       theme: {light: 'neutral', dark: 'dark'},
     },
+    // Code samples on the endpoint pages, curl first.
+    languageTabs: [
+      {highlight: 'bash', language: 'curl', logoClass: 'curl'},
+      {highlight: 'python', language: 'python', logoClass: 'python'},
+      {highlight: 'go', language: 'go', logoClass: 'go'},
+      {highlight: 'javascript', language: 'nodejs', logoClass: 'nodejs'},
+    ],
   } satisfies Preset.ThemeConfig,
 };
 

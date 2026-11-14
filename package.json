@@ -14,8 +14,12 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "release-notes": "node scripts/release-notes.mjs",
-    "prestart": "npm run release-notes",
-    "prebuild": "npm run release-notes",
+    "api-docs": "node scripts/openapi-site.mjs && (docusaurus clean-api-docs all >/dev/null 2>&1; docusaurus gen-api-docs all)",
+    "reference:sync": "node scripts/sync-reference.mjs",
+    "reference:check": "node scripts/sync-reference.mjs --check && node scripts/check-endpoints.mjs",
+    "pretypecheck": "npm run api-docs",
+    "prestart": "npm run release-notes && npm run api-docs",
+    "prebuild": "npm run release-notes && npm run api-docs",
     "screenshots": "node screenshots/shoot.mjs",
     "screenshots:record": "screenshots/cluster.sh up && node screenshots/seed.mjs && node screenshots/record.mjs"
   },
@@ -27,9 +31,13 @@
     "@easyops-cn/docusaurus-search-local": "0.55.3",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "5.2.0",
+    "docusaurus-plugin-sass": "0.2.6",
+    "docusaurus-theme-openapi-docs": "5.2.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sass": "1.108.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",

@@ -1,0 +1,5 @@
+{
+  "repo": "vurulkan/kubernetes-openconsole",
+  "ref": "8649ec0932463d7eddc58ebaad615dec711afb70",
+  "note": "The code repo commit the generated reference is copied from (npm run reference:sync). Until 2.23.0 ships it is the dev commit of M21, whose lists are those of 2.22.0 plus descriptions; pin it to the release tag (v2.23.0, \u2026) when one ships."
+}
