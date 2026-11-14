@@ -1,0 +1,51 @@
+---
+title: "Keyboard shortcuts"
+description: "Every keyboard shortcut, the command palette, and the Turkish keyboard layout."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Keyboard shortcuts
+
+**You want to:** work without the mouse.
+
+`?` opens the full list in the app; `⌘K` (Mac) or `Ctrl+K` opens the command palette, which finds pages, themes and
+namespaces by typing.
+
+"`g` then `o`" means: press `g`, then `o` within a second. Shortcuts never fire while you type in a text field (in 2.22.0 the YAML editor is the exception: typing `e` there
+opens Live Events instead).
+
+| Where | Keys | Does |
+|---|---|---|
+| Everywhere | `⌘K` / `Ctrl+K` | command palette |
+| | `?` | this list |
+| | `Esc` | close the open dialog or palette |
+| Go to | `g` then `d` | Dashboard |
+| | `g` then `o`, `g` then `n`, `g` then `a` | Overview, Nodes, Admin (admins only) |
+| Theme | `t` then `l` / `d` / `s` | light / dark / system |
+| Dashboard | `[` and `]` | previous / next resource tab |
+| | `r` | refresh the list |
+| | `/` | focus the search box |
+| | `n` | focus the namespace filter |
+| | `e` | open / close Live Events (`Esc` closes it) |
+| | `c` | cluster switcher |
+| | `v` | saved views |
+| Cluster switcher, saved views (open) | `1`–`9` | pick by position |
+| | `↑` `↓`, `Enter` | move, open |
+| | `Esc` | close without switching |
+| Admin | `[` and `]` | previous / next section |
+| Admin tables (Users, Groups, Roles, Sessions, Recordings) | `j` / `k` | next / previous row |
+| | `Enter` | open the row |
+| | `d` | delete the row (always asks first) |
+| | `n` / `p` | next / previous page |
+| Log window | `p` | pause / continue |
+| | `w` | wrap long lines |
+| | `⌘F` / `Ctrl+F` | find in the log |
+| Scale dialog (target focused) | `↑` / `↓` | replicas ±1 |
+| | `Shift` + `↑` / `↓` | replicas ±10 |
+| Command palette | `↑` `↓`, `Enter` | move, run |
+
+**Turkish Q keyboard:** the shortcuts follow the key's position, not its letter, so `[` `]` `/` are the keys `ğ` `ü`
+`.` on a Turkish layout, and they work without switching layouts.
+
+<Screenshot id="shortcuts" alt="The keyboard shortcut list opened with ?" />

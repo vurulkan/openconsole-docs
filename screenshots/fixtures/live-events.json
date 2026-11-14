@@ -1,0 +1,118 @@
+{
+ "time": 1794606846759,
+ "sockets": [
+  {
+   "path": "/ws/events",
+   "frames": [
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:07.357088332Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout.18e7b96b62d5dd2b\",\"at\":\"2026-11-13T21:54:07Z\",\"reason\":\"ScalingReplicaSet\",\"message\":\"Scaled up replica set checkout-5bd6c544f9 from 0 to 1\",\"type\":\"Normal\",\"involvedKind\":\"Deployment\",\"involvedName\":\"checkout\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:07.443602089Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:07.509299386Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"added\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:07.990387912Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9.18e7b96b85a1496c\",\"at\":\"2026-11-13T21:54:07Z\",\"reason\":\"SuccessfulCreate\",\"message\":\"Created pod: checkout-5bd6c544f9-9nzzx\",\"type\":\"Normal\",\"involvedKind\":\"ReplicaSet\",\"involvedName\":\"checkout-5bd6c544f9\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:08.060366103Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96b8a69d968\",\"at\":\"2026-11-13T21:54:08.065183Z\",\"reason\":\"Scheduled\",\"message\":\"Successfully assigned shop/checkout-5bd6c544f9-9nzzx to k3d-oc-docs-server-0\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:08.159858531Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:08.17576712Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"HorizontalPodAutoscaler\",\"namespace\":\"shop\",\"name\":\"storefront\",\"at\":\"2026-11-13T21:54:08.930211622Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96bf680b866\",\"at\":\"2026-11-13T21:54:09Z\",\"reason\":\"Pulled\",\"message\":\"Container image \\\"busybox:1.36\\\" already present on machine and can be accessed by the pod\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96bfc9058ba\",\"at\":\"2026-11-13T21:54:09Z\",\"reason\":\"Created\",\"message\":\"Container created\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96c0e9dbfb7\",\"at\":\"2026-11-13T21:54:10Z\",\"reason\":\"Started\",\"message\":\"Container started\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:10.669355868Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout.18e7b96c2fe4cd4e\",\"at\":\"2026-11-13T21:54:10Z\",\"reason\":\"ScalingReplicaSet\",\"message\":\"Scaled down replica set checkout-b69774745 from 1 to 0\",\"type\":\"Normal\",\"involvedKind\":\"Deployment\",\"involvedName\":\"checkout\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-b69774745-thhvq\",\"at\":\"2026-11-13T21:54:10.96875318Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:10.970720129Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:11.022743795Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-b69774745.18e7b96c35f04732\",\"at\":\"2026-11-13T21:54:10Z\",\"reason\":\"SuccessfulDelete\",\"message\":\"Deleted pod: checkout-b69774745-thhvq\",\"type\":\"Normal\",\"involvedKind\":\"ReplicaSet\",\"involvedName\":\"checkout-b69774745\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-b69774745-thhvq\",\"at\":\"2026-11-13T21:54:11.184553653Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:11.549581309Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96bf680b866\",\"at\":\"2026-11-13T21:54:11Z\",\"reason\":\"Pulled\",\"message\":\"Container image \\\"busybox:1.36\\\" already present on machine and can be accessed by the pod\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:12.098214273Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96bfc9058ba\",\"at\":\"2026-11-13T21:54:11Z\",\"reason\":\"Created\",\"message\":\"Container created\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-b69774745-thhvq\",\"at\":\"2026-11-13T21:54:12.42360497Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:12.511564726Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96c0e9dbfb7\",\"at\":\"2026-11-13T21:54:12Z\",\"reason\":\"Started\",\"message\":\"Container started\",\"type\":\"Normal\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:12.640066447Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:12.926610135Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-b69774745-thhvq\",\"at\":\"2026-11-13T21:54:13.091973923Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"deleted\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-b69774745-thhvq\",\"at\":\"2026-11-13T21:54:13.157594254Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:13.200850153Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"event\",\"kind\":\"Event\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx.18e7b96ce126bf80\",\"at\":\"2026-11-13T21:54:13Z\",\"reason\":\"BackOff\",\"message\":\"Back-off restarting failed container checkout in pod checkout-5bd6c544f9-9nzzx_shop(3a49924b-a20f-4003-af96-f1136dd45d8d)\",\"type\":\"Warning\",\"involvedKind\":\"Pod\",\"involvedName\":\"checkout-5bd6c544f9-9nzzx\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Pod\",\"namespace\":\"shop\",\"name\":\"checkout-5bd6c544f9-9nzzx\",\"at\":\"2026-11-13T21:54:13.988393121Z\"}\n"
+    },
+    {
+     "s": "{\"verb\":\"updated\",\"kind\":\"Deployment\",\"namespace\":\"shop\",\"name\":\"checkout\",\"at\":\"2026-11-13T21:54:14.099960291Z\"}\n"
+    }
+   ]
+  }
+ ]
+}

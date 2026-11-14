@@ -1,0 +1,58 @@
+---
+title: "Your API keys"
+description: "Create a key for your own scripts or AI agent, limit what it may do, and stop it."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Your API keys
+
+**You want to:** let a script or an AI agent (Claude Code, Cursor) use OpenConsole in your name, with less than
+you may do yourself.
+
+Account menu (your name, top right) → **API keys**, or `⌘K` → *Go to API keys*.
+
+<Screenshot id="api-keys" alt="The API keys page: two keys, ci-smoke-test and claude-code, with note, prefix, permissions, last use and expiry" />
+
+## Create one
+
+**New API key**, then:
+
+<Screenshot id="api-key-form" alt="The New API key form: name and note, expiry presets, scope (clusters and namespaces) and the permission templates" />
+
+1. **Name and note**: the name appears in the audit log next to everything the key does.
+2. **Expiry**: 7, 30, 60 or 90 days, a date, or none (your admin may limit this).
+3. **Scope**: all clusters or one; all your namespaces (including ones you get later) or a selection.
+4. **Permissions**: a template or single cells.
+   - *Read-only (safe)*: list, get and logs, no ConfigMaps or Secrets, nothing that changes anything.
+   - *Read-only (all)*: list, get and logs everywhere, ConfigMap data and secret values included.
+   - *All my permissions* or *Custom*.
+
+   Cells you don't hold yourself, or that your admin's policy doesn't allow for keys, are closed.
+5. **Create** shows the key (`oc_…`) **once**, with a ready `curl` line. Copy it now; OpenConsole keeps only a hash.
+
+## What a key can do
+
+At most what it lists **and** what you hold at the moment of the call. If a permission is taken away from you, the key
+loses it at once; if you get more, the key does not grow by itself (except *all my namespaces*). The list warns
+*"N permissions not valid now"* when your permissions or the admin's policy took something away.
+
+Shells and commands run with a key are always recorded. Every call is audited with your name and the key's name.
+
+## Stop or replace one
+
+From the **⋯** menu of a key:
+
+- **Edit**: name, note, scope, permissions (the secret and expiry stay).
+- **Regenerate**: a new secret and a new expiry; the old secret stops working at once.
+- **Revoke**: stops it for good. **Delete** removes it from the list.
+
+How to use a key from `curl` or an agent, and every endpoint: **Documentation** tab on the same page, and
+[API and agents](/api/api-keys).
+
+:::info[Can't see it or can't do it?]
+- **No API keys in the menu**: the admin switched API keys off for everyone.
+- **Every template is greyed out**, or calls answer `api_access_off`: the admin's API access policy gives your keys
+  nothing; ask your admin (Admin → Roles → *API access*).
+- **A call answers 403 `api_access_policy`**: the policy allows less than the key lists.
+:::

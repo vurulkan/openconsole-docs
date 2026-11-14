@@ -15,7 +15,9 @@
     "typecheck": "tsc",
     "release-notes": "node scripts/release-notes.mjs",
     "prestart": "npm run release-notes",
-    "prebuild": "npm run release-notes"
+    "prebuild": "npm run release-notes",
+    "screenshots": "node screenshots/shoot.mjs",
+    "screenshots:record": "screenshots/cluster.sh up && node screenshots/seed.mjs && node screenshots/record.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
@@ -34,6 +36,8 @@
     "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
     "@types/react": "^19.0.0",
+    "playwright-core": "1.65.0",
+    "sharp": "0.34.5",
     "typescript": "~6.0.2"
   },
   "browserslist": {

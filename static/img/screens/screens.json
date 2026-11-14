@@ -1,0 +1,166 @@
+{
+ "admin-add-permissions": {
+  "width": 1440,
+  "height": 1200
+ },
+ "admin-api-keys": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-audit": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-azure": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-clusters": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-customization": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-groups": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-ldap": {
+  "width": 1440,
+  "height": 1000
+ },
+ "admin-recordings": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-roles": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-session-settings": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-sessions": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-user-edit": {
+  "width": 1440,
+  "height": 900
+ },
+ "admin-users": {
+  "width": 1440,
+  "height": 900
+ },
+ "api-key-form": {
+  "width": 1440,
+  "height": 900
+ },
+ "api-keys": {
+  "width": 1440,
+  "height": 900
+ },
+ "cluster-switcher": {
+  "width": 1440,
+  "height": 900
+ },
+ "dashboard-cards": {
+  "width": 1440,
+  "height": 900
+ },
+ "dashboard-columns": {
+  "width": 1440,
+  "height": 900
+ },
+ "dashboard-deployments": {
+  "width": 1440,
+  "height": 900
+ },
+ "dashboard-pods": {
+  "width": 1440,
+  "height": 900
+ },
+ "dashboard-search": {
+  "width": 1440,
+  "height": 900
+ },
+ "deployment-drawer": {
+  "width": 1440,
+  "height": 900
+ },
+ "live-events": {
+  "width": 1440,
+  "height": 900
+ },
+ "login": {
+  "width": 1440,
+  "height": 900
+ },
+ "logs": {
+  "width": 1440,
+  "height": 900
+ },
+ "logs-previous": {
+  "width": 1440,
+  "height": 900
+ },
+ "node-drawer": {
+  "width": 1440,
+  "height": 900
+ },
+ "nodes": {
+  "width": 1440,
+  "height": 900
+ },
+ "overview": {
+  "width": 1440,
+  "height": 900
+ },
+ "pod-drawer": {
+  "width": 1440,
+  "height": 900
+ },
+ "recording-player": {
+  "width": 1440,
+  "height": 1000
+ },
+ "restart-confirm": {
+  "width": 1440,
+  "height": 900
+ },
+ "scale-dialog": {
+  "width": 1440,
+  "height": 900
+ },
+ "secret-reveal": {
+  "width": 1440,
+  "height": 900
+ },
+ "secrets-list": {
+  "width": 1440,
+  "height": 900
+ },
+ "shell": {
+  "width": 1440,
+  "height": 900
+ },
+ "shortcuts": {
+  "width": 1440,
+  "height": 900
+ },
+ "views-menu": {
+  "width": 1440,
+  "height": 900
+ },
+ "yaml-diff": {
+  "width": 1440,
+  "height": 900
+ },
+ "yaml-view": {
+  "width": 1440,
+  "height": 900
+ }
+}

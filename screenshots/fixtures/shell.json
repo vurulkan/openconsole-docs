@@ -1,0 +1,58 @@
+{
+ "time": 1794606842224,
+ "sockets": [
+  {
+   "path": "/ws/namespaces/shop/pods/storefront-785c7c97c8-ffvjm/exec",
+   "frames": [
+    {
+     "s": "{\"type\":\"session\",\"idleTimeoutSeconds\":300}"
+    },
+    {
+     "s": "{\"type\":\"recording\",\"enabled\":true,\"sessionId\":\"b4504d5c-1379-4a1b-a54e-9ce5b54da108\"}"
+    },
+    {
+     "b": "DQo="
+    },
+    {
+     "b": "cm9vdEBzdG9yZWZyb250LTc4NWM3Yzk3YzgtZmZ2am06LyMgDQpyb290QHN0b3JlZnJvbnQtNzg1YzdjOTdjOC1mZnZqbTovIyA="
+    },
+    {
+     "b": "aG8="
+    },
+    {
+     "b": "c3Ru"
+    },
+    {
+     "b": "YQ=="
+    },
+    {
+     "b": "bQ=="
+    },
+    {
+     "b": "ZSAmJiBs"
+    },
+    {
+     "b": "cw=="
+    },
+    {
+     "b": "IA=="
+    },
+    {
+     "b": "Lw=="
+    },
+    {
+     "b": "DQo="
+    },
+    {
+     "b": "c3RvcmVmcm9udC03ODVjN2M5N2M4LWZmdmptDQo="
+    },
+    {
+     "b": "G1sxOzM0bWJpbhtbbSAgICAbWzE7MzRtZGV2G1ttICAgIBtbMTszNG1ldGMbW20gICAgG1sxOzM0bWhvbWUbW20gICAbWzE7MzRtbGliG1ttICAgIBtbMTszNm1saWI2NBtbbSAgG1sxOzM0bXByb2MbW20gICAbWzE7MzRtcm9vdBtbbSAgIBtbMTszNG1zeXMbW20gICAgG1sxOzM0bXRtcBtbbSAgICAbWzE7MzRtdXNyG1ttICAgIBtbMTszNG12YXIbW20NCg=="
+    },
+    {
+     "b": "cm9vdEBzdG9yZWZyb250LTc4NWM3Yzk3YzgtZmZ2am06LyMg"
+    }
+   ]
+  }
+ ]
+}

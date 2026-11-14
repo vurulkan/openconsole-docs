@@ -1,0 +1,45 @@
+---
+title: "Pod shell"
+description: "Open a terminal in a running container: container choice, recording, idle timeout, how many at once."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Pod shell
+
+**You want to:** run a command inside a running container, like `kubectl exec -it … -- sh`.
+
+Click **Shell** on a pod row, a pod card or in the pod's drawer.
+
+<Screenshot id="shell" alt="A shell in a storefront pod: the red banner 'This session is being recorded', and the output of hostname and ls" />
+
+## Which container and which shell
+
+- A pod with several containers first asks which one. The main container is on top and focused (`Enter` opens it);
+  containers that aren't running are greyed out. The terminal can still switch container later.
+- The menu at the top right picks the shell: *Auto* tries `bash`, then `ash`, then `sh`. Minimal images (distroless,
+  scratch) have no shell at all; then nothing can be opened.
+- **Reconnect** starts a new session in the same container.
+
+## It is recorded
+
+The red banner means the session is being recorded: everything the terminal shows, including anything secret you
+print, is stored and can be replayed by admins. It appears only when the server confirms the recording. What you
+type is recorded only as far as the shell echoes it back (password prompts don't echo).
+
+## Limits
+
+- A shell with no input for **5 minutes** closes (your admin may set another time).
+- You can have **3** shells open at once; a fourth is refused until you close one.
+- Each session is in the audit log twice: `pod.exec` with `phase: start` (container, command) and `phase: end` (exit
+  code, bytes in and out, duration).
+
+Treat the shell as what it is: you act inside a production container, as the container's user.
+
+:::info[Can't see it or can't do it?]
+- **No Shell button**: you don't hold `pods:exec` in this namespace, or your admin turned shells off for everyone.
+- **"too many open shells"**: close one of your other three.
+- **The shell closes after a minute of silence**: a proxy in front of OpenConsole times out idle connections; ask
+  your admin ([Install on Kubernetes](/installation/kubernetes#ingress-with-tls)).
+- **403 from Kubernetes**: the cluster connection itself may not exec; ask your admin.
+:::

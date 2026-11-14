@@ -1,0 +1,6 @@
+{
+  "version": "2.22.0",
+  "viewport": {"width": 1440, "height": 900},
+  "themes": ["light", "dark"],
+  "locales": ["en", "tr"]
+}

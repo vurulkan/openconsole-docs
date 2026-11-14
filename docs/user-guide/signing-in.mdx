@@ -1,0 +1,52 @@
+---
+title: "Signing in"
+description: "Sign in with a local, LDAP or Microsoft account, change your password, language and theme."
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Signing in
+
+**You want to:** open OpenConsole and start working.
+
+<Screenshot id="login" alt="The sign-in page: username and password fields and the Sign in button" />
+
+## Which account
+
+Your admin tells you how you sign in. The sign-in page is the same for all three:
+
+| Your account | How you sign in |
+|---|---|
+| **Local** | username and password, both set up in OpenConsole |
+| **LDAP / Active Directory** | your directory username and password, typed into the same form; OpenConsole checks them against the directory |
+| **Azure AD (Entra ID)** | the **Sign in with Microsoft** button, shown when your admin has turned it on |
+
+A failed sign-in always says the same thing, whatever the reason. Five failures in a row for one account from one
+address lock it for five minutes.
+
+## Your password
+
+- If your admin set or reset your password, change it to one only you know (account menu, below). After a reset
+  OpenConsole usually asks for this itself. After a password change you are signed out; sign in again with the new one.
+- Change it later from the account menu (your name, top right). This signs you out everywhere else too.
+- Passwords are at least 8 characters (your admin may require more).
+- LDAP and Microsoft accounts change their password in the directory, not here.
+
+## How long you stay signed in
+
+A sign-in lasts 60 minutes by default (your admin may set another value). When it ends you are taken back to the
+sign-in page. **Sign out** (top right) ends it at once.
+
+## Language and theme
+
+- **Language**: the **EN / TR** switch in the header. OpenConsole starts in your browser's language and remembers
+  your choice.
+- **Theme**: the sun / moon / screen buttons in the header for light, dark or your system's setting; or the keys
+  `t l`, `t d`, `t s`.
+
+:::info[Can't sign in?]
+- *Invalid username or password* also covers a disabled account and a locked one. Wait five minutes after several
+  failures, then ask your admin to check that your account is active and that you sign in the right way (local,
+  LDAP or Microsoft).
+- You sign in but see no namespaces: you are in no group with a role yet. See [Choosing a cluster and namespace](/user-guide/cluster-and-namespace).
+:::

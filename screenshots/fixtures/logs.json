@@ -1,0 +1,310 @@
+{
+ "time": 1794606730047,
+ "sockets": [
+  {
+   "path": "/ws/namespaces/shop/pods/storefront-785c7c97c8-ffvjm/logs",
+   "frames": [
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:12.335678533Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":41}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:15.337396088Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":42}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:18.338453641Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":43}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:21.339441194Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":44}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:24.340098745Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":45}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:27.341565298Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":46}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:30.342149849Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":47}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:33.342970400Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":48}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:36.344189951Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":49}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:39.344634501Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":50}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:42.345944052Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":51}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:45.347809605Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":12}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:48.351995164Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":13}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:51.353576716Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":14}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:54.354301265Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":15}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:47:57.355437815Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":16}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:00.356570366Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":17}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:03.357112915Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":18}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:06.358004464Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":19}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:09.359129014Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":20}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:12.360691565Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":21}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:15.361340114Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":22}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:18.362858665Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":23}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:21.363703214Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":24}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:24.364801764Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":25}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:27.366371315Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":26}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:30.367094863Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":27}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:33.367445411Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":28}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:36.373951248Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":29}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:39.378037501Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":30}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:42.375462895Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":31}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:45.376239432Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":32}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:48.377170385Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":33}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:51.378868449Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":34}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:54.379745637Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":35}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:48:57.380282666Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":36}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:00.381166238Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":37}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:03.382918086Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":38}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:06.384518154Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":39}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:09.385042366Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":40}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:12.385382418Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":41}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:15.386695988Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":42}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:18.388035014Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":43}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:21.388504429Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":44}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:24.389054949Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":45}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:27.391861165Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":46}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:30.393553300Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":47}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:33.394063197Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":48}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:36.395167505Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":49}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:39.396086159Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":50}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:42.397523941Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":51}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:45.400671590Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":12}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:48.404657062Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":13}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:51.403944747Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":14}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:54.405004885Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":15}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:49:57.406510475Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":16}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:00.407418485Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":17}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:03.408924682Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":18}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:06.409591071Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":19}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:09.410975398Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":20}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:12.411634669Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":21}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:15.413172637Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":22}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:18.413617351Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":23}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:21.415216524Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":24}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:24.416560161Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":25}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:27.418054128Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":26}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:30.420275283Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":27}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:33.420682713Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":28}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:36.421744140Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":29}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:39.422279554Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":30}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:42.423662767Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":31}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:45.425274735Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":32}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:48.426695397Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":33}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:51.427771679Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":34}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:54.429509430Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":35}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:50:57.430100685Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":36}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:00.431235256Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":37}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:03.431517150Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":38}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:06.432146219Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":39}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:09.432896402Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":40}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:12.434532583Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":41}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:15.438116634Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":42}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:18.443591493Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":43}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:21.439276736Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":44}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:24.439859482Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":45}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:27.440481935Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":46}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:30.441639007Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":47}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:33.442146699Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":48}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:36.443369880Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":49}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:39.444508533Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":50}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:42.445672594Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":51}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:45.446556023Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":12}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:48.448107719Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":13}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:51.448527713Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":14}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:54.449987852Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":15}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:51:57.452217100Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":16}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:52:00.452901510Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":17}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:52:03.453446968Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":18}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:52:06.455395363Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":19}\"}\n"
+    },
+    {
+     "s": "{\"t\":\"line\",\"ts\":\"2026-11-13T21:52:09.455863770Z\",\"c\":\"storefront\",\"text\":\"{\\\"level\\\":\\\"info\\\",\\\"msg\\\":\\\"GET /products 200\\\",\\\"duration_ms\\\":20}\"}\n"
+    }
+   ]
+  }
+ ]
+}

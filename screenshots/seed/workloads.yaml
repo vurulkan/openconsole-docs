@@ -1,0 +1,194 @@
+# Workloads for the documentation screenshots: a small shop with healthy parts and
+# parts that fail the usual ways. Throwaway k3d cluster only.
+apiVersion: v1
+kind: Namespace
+metadata: {name: shop}
+---
+apiVersion: v1
+kind: Namespace
+metadata: {name: payments}
+---
+apiVersion: v1
+kind: Namespace
+metadata: {name: platform}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: storefront, namespace: shop, labels: {app: storefront, tier: web}}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: storefront}}
+  template:
+    metadata: {labels: {app: storefront, tier: web}}
+    spec:
+      containers:
+      - name: storefront
+        image: busybox:1.36
+        command: [sh, -c, 'i=0; while true; do i=$((i+1)); echo "{\"level\":\"info\",\"msg\":\"GET /products 200\",\"duration_ms\":$((i % 40 + 12))}"; sleep 3; done']
+        ports: [{containerPort: 8080, name: http}]
+        envFrom: [{configMapRef: {name: storefront-config}}]
+        resources: {requests: {cpu: 20m, memory: 32Mi}, limits: {cpu: 200m, memory: 128Mi}}
+        readinessProbe: {exec: {command: [sh, -c, 'true']}, periodSeconds: 10}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: checkout, namespace: shop, labels: {app: checkout, tier: api}}
+spec:
+  selector: {matchLabels: {app: checkout}}
+  template:
+    metadata: {labels: {app: checkout, tier: api}}
+    spec:
+      containers:
+      - name: checkout
+        image: busybox:1.36
+        command: [sh, -c, 'echo "loading price cache"; tail /dev/zero']
+        resources: {requests: {cpu: 10m, memory: 16Mi}, limits: {memory: 32Mi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: catalog, namespace: shop, labels: {app: catalog, tier: api}}
+spec:
+  selector: {matchLabels: {app: catalog}}
+  template:
+    metadata: {labels: {app: catalog, tier: api}}
+    spec:
+      containers:
+      - name: catalog
+        image: busybox:1.36
+        command: [sh, -c, 'echo "catalog 3.4.1 starting"; echo "connecting to postgres:5432"; sleep 2; echo "error: dial tcp postgres:5432: connection refused" >&2; exit 1']
+        resources: {requests: {cpu: 10m, memory: 16Mi}, limits: {memory: 64Mi}}
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: {name: cart-redis, namespace: shop}
+spec:
+  serviceName: cart-redis
+  replicas: 1
+  selector: {matchLabels: {app: cart-redis}}
+  template:
+    metadata: {labels: {app: cart-redis}}
+    spec:
+      containers:
+      - name: redis
+        image: busybox:1.36
+        command: [sh, -c, 'echo "Ready to accept connections"; while true; do sleep 30; done']
+        resources: {requests: {cpu: 10m, memory: 16Mi}, limits: {memory: 64Mi}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: storefront, namespace: shop}
+spec:
+  selector: {app: storefront}
+  ports: [{name: http, port: 80, targetPort: http}]
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: storefront-config, namespace: shop}
+data:
+  LOG_LEVEL: info
+  CATALOG_URL: http://catalog.shop.svc:8080
+---
+apiVersion: v1
+kind: Secret
+metadata: {name: storefront-db, namespace: shop}
+type: Opaque
+stringData:
+  username: storefront
+  password: example-not-a-real-password
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: {name: storefront, namespace: shop}
+spec:
+  rules:
+  - host: shop.example.com
+    http:
+      paths:
+      - {path: /, pathType: Prefix, backend: {service: {name: storefront, port: {name: http}}}}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: {name: storefront, namespace: shop}
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: storefront}
+  minReplicas: 2
+  maxReplicas: 6
+  metrics:
+  - type: Resource
+    resource: {name: cpu, target: {type: Utilization, averageUtilization: 70}}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: {name: nightly-report, namespace: shop}
+spec:
+  schedule: "0 2 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - {name: report, image: busybox:1.36, command: [sh, -c, 'echo report done']}
+---
+apiVersion: batch/v1
+kind: Job
+metadata: {name: db-migrate, namespace: shop}
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - {name: migrate, image: busybox:1.36, command: [sh, -c, 'echo "applied 3 migrations"']}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: payments-api, namespace: payments, labels: {app: payments-api}}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: payments-api}}
+  template:
+    metadata: {labels: {app: payments-api}}
+    spec:
+      containers:
+      - name: api
+        image: busybox:1.36
+        command: [sh, -c, 'while true; do echo "POST /charges 201"; sleep 4; done']
+        resources: {requests: {cpu: 20m, memory: 32Mi}, limits: {cpu: 200m, memory: 128Mi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: ledger, namespace: payments, labels: {app: ledger}}
+spec:
+  selector: {matchLabels: {app: ledger}}
+  template:
+    metadata: {labels: {app: ledger}}
+    spec:
+      containers:
+      - {name: ledger, image: 'busybox:9.99-missing', resources: {limits: {memory: 64Mi}}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: fraud-check, namespace: payments, labels: {app: fraud-check}}
+spec:
+  selector: {matchLabels: {app: fraud-check}}
+  template:
+    metadata: {labels: {app: fraud-check}}
+    spec:
+      initContainers:
+      - {name: load-rules, image: busybox:1.36, command: [sh, -c, 'echo "loading rules"; echo "rules.yaml: not found" >&2; exit 3']}
+      containers:
+      - {name: fraud-check, image: busybox:1.36, command: [sleep, '3600']}
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata: {name: node-agent, namespace: platform}
+spec:
+  selector: {matchLabels: {app: node-agent}}
+  template:
+    metadata: {labels: {app: node-agent}}
+    spec:
+      containers:
+      - name: agent
+        image: busybox:1.36
+        command: [sh, -c, 'while true; do echo "metrics flushed"; sleep 15; done']
+        resources: {requests: {cpu: 5m, memory: 8Mi}, limits: {memory: 32Mi}}
